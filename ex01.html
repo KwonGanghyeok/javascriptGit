@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 안녕하세요 안녕
+    while(1){
+        var input = prompt("입력하세요","");
+        console.log("input = "+input);
+        
+        var today = new Date();
+
+        var 현재시간 = (today.getHours()) +"시" + today.getMinutes() + "분";
+
+        alert(현재시간);
+
+        if((input.indexOf("안녕")>-1) && (today.getHours()>6 && today.getHours()<12)){
+            alert("안녕하세요 현재 시간은 6시 초과 12시 미만입니다.");
+            // document.body.innerHTML = "안녕하세요";
+        }
+        else if((input.indexOf("안녕")>-1) && (today.getHours()>12 && today.getHours() <24)){
+            alert("안녕하세요 현재 시간은 12시 초과 24시 미만입니다.");
+            // document.body.innerHTML = "안녕하세요";
+        }
+        else if(input.indexOf("굿모닝")>-1){
+            alert("굿모닝");
+        }
+        else if(input.indexOf("밥뭇나")>-1){
+            alert("아니");
+        }
+        else if(input.indexOf("종료")>-1){
+            alert("종료");
+            break;
+        }
+
+    }
+</script>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style-type: none;
+            float: left;
+            background-color: white;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 0;
+            border: 1px solid black;
+            font-size: 50px;
+        }
+        li:hover{
+            cursor: pointer;
+        }
+        #full{
+            border: 1px solid black;
+            margin: 100px;
+            width: 400px;
+            height: 650px;
+            background-color: black;
+            border-radius: 50px;
+        }
+        #full > h1{
+            /* border: 1px solid black; */
+            text-align: center;
+            height: auto;
+            margin: 20px;
+            color: white;
+            font-size: 50px;
+        }
+        #full > #input{
+            border: 1px solid black;
+            height: 80px;
+            text-align: right;
+        }
+        #full > #input > #inputA{
+            height: 75px;
+            width: 394px;
+            float: left;
+            font-size: 40px;
+        }
+        #full > #input > #btnA{
+            height: 80px;
+            width: 45px;
+            /* font-size: 30px;
+            text-align: center; */
+        }
+        #full > #input > #btnA:hover{
+            cursor: pointer;
+        }
+        #full > #container > .calculator > .number {
+            border: 1px solid black;
+            width: 380px;
+            height: 90px;
+            padding-left: 15px;
+        }
+
+        #full > #container > .calculator > .number > #btnA{
+            list-style-type: none;
+            width: 72px;
+            height: 72px;
+            text-align: center;
+            float: left;
+            margin: 10px;
+            padding: 0;
+            font-size: 50px;
+            border-radius: 10px;
+
+            background-color: white;
+            border: 1px solid black;
+        }
+        #full > #container > .calculator > .number > li{
+            width: 70px;
+            height: 70px;
+            text-align: center;
+        }
+        
+       
+    </style>
+    <script>
+        window.onload = function(){
+            document.getElementById("btnA").onclick = function(){
+                var inputValue = document.getElementById("inputA").value;
+                alert(eval(inputValue));
+                console.log("inputA ="+inputValue);
+            }
+        }
+        var doA = function(a){
+            document.getElementById("inputA").value = document.getElementById("inputA").value +a;
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="full">
+        <h1>계산기</h1>
+        <div id="input">
+            <input type="text" name="" id="inputA" value="">
+            
+        </div>
+        <div id="container">
+            <div class="calculator">
+                <ul class="number">
+                    <li onclick="doA(1)">1</li>
+                    <li onclick="doA(2)">2</li>
+                    <li onclick="doA(3)">3</li>
+                    <li onclick="doA('+')">+</li>
+                </ul>
+                <ul class="number">
+                    <li onclick="doA(4)">4</li>
+                    <li onclick="doA(5)">5</li>
+                    <li onclick="doA(6)">6</li>
+                    <li onclick="doA('-')">-</li>
+                </ul>
+                <ul class="number">
+                    <li onclick="doA(7)">7</li>
+                    <li onclick="doA(8)">8</li>
+                    <li onclick="doA(9)">9</li>
+                    <li onclick="doA('*')">×</li>
+                </ul>
+                <ul class="number">
+                    <button id="btnA">=</button>
+                    <li onclick="doA(0)">0</li>
+                    <li onclick="doA(00)">00</li>
+                    <!-- <li >=</li> -->
+                    <li onclick="doA('/')">÷</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
