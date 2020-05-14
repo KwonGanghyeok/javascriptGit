@@ -65,8 +65,8 @@
         }
         #full > #container > .calculator > .number > .number0{
             list-style-type: none;
-            width: 160px;
-            height: 72px;
+            width: 70px;
+            height: 70px;
             text-align: center;
             float: left;
             margin: 10px;
@@ -82,8 +82,8 @@
         }
         #full > #container > .calculator > .number > #btnA{
             list-style-type: none;
-            width: 72px;
-            height: 72px;
+            width: 70px;
+            height: 70px;
             text-align: center;
             float: left;
             margin: 10px;
@@ -97,6 +97,24 @@
         #full > #container > .calculator > .number > #btnA:hover{
             background-color: aliceblue;
         }
+        #full > #container > .calculator > .number > #reset{
+            list-style-type: none;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            float: left;
+            margin: 10px;
+            padding: 0;
+            font-size: 50px;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+            /* border: 1px solid black; */
+        }
+        #full > #container > .calculator > .number > #reset:hover{
+            background-color: aliceblue;
+        }
+
         #full > #container > .calculator > .number > li{
             width: 70px;
             height: 70px;
@@ -110,17 +128,18 @@
         window.onload = function(){
             document.getElementById("btnA").onclick = function(){
                 var inputValue = document.getElementById("inputA").value;
-                alert(eval(inputValue));
                 console.log("inputA ="+inputValue);
-                document.getElementById("inputA").value = "";
+                // alert(eval(inputValue));
+                document.getElementById("inputA").value = eval(inputValue);
             }
         }
         var doA = function(a){
-            document.getElementById("inputA").value = document.getElementById("inputA").value + a;
+            document.getElementById("inputA").value += a;
         }
-        // var doB = function(b){
-        //     document.getElementById("inputA").value = "";
-        // }
+
+        var doB = function(b){
+            document.getElementById("inputA").value = "";
+        }
     </script>
 </head>
 <body>
@@ -150,8 +169,8 @@
                     <li onclick="doA('*')">×</li>
                 </ul>
                 <ul class="number">
+                    <button type="reset" id="reset" onclick="doB('c')">C</button>
                     <li class="number0" onclick="doA(0)">0</li>
-                    <!-- <button type="reset" id="reset" onclick="doB('c')">C</button> -->
                     <!-- <li onclick="doA(0)">0</li> -->
                     <button id="btnA">=</button>
                     <!-- <li >=</li> -->
